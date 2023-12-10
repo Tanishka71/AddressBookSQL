@@ -61,3 +61,8 @@ WHERE ContactID = 1;
 UPDATE AddressBook
 SET Name = CONCAT(FirstName, ' ', LastName), Type = 'Friends'
 WHERE ContactID = 4;
+
+-- <----------------USE CASE 10------------------->
+SELECT type,COUNT(*) 
+FROM AddressBook
+GROUP BY type;
