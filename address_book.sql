@@ -16,3 +16,13 @@ CREATE TABLE AddressBook (
     PhoneNumber VARCHAR(15),
     Email VARCHAR(100)
 );
+
+
+-- <----------------USE CASE 3----------->
+INSERT INTO AddressBook (FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email)
+VALUES 
+    ('tanishka', 'jain', 'lko', 'lucknow', 'UP', '12345', '98765432', 'tanishka_jain@email.com'),
+    ('Bob', 'Williams', '321 Pine St', 'Nowhere', 'AZ', '54321', '555-5432', 'bob.williams@email.com'),
+    ('Charlie', 'Davis', '555 Maple St', 'Anywhere', 'FL', '98765', '555-2345', 'charlie.davis@email.com'),
+    ('Diana', 'Miller', '876 Oak St', 'Noway', 'WA', '12345', '555-8765', 'diana.miller@email.com');
+SELECT * FROM AddressBook;
