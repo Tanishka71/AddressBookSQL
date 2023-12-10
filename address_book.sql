@@ -75,3 +75,48 @@ INSERT INTO AddressBook (FirstName, LastName, Address, City, State, ZipCode, Pho
 SELECT FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email, Name, 'Family'
 FROM AddressBook
 WHERE ContactID = 1;
+
+
+-- <----------------USE CASE 12------------------->
+-- Create Person table
+CREATE TABLE Person (
+    ContactID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Address VARCHAR(255),
+    City VARCHAR(50),
+    State VARCHAR(50),
+    ZipCode VARCHAR(10),
+    PhoneNumber VARCHAR(15),
+    Email VARCHAR(100)
+);
+
+-- Create ContactType table
+CREATE TABLE ContactType (
+    TypeID INT PRIMARY KEY AUTO_INCREMENT,
+    TypeName VARCHAR(50)
+);
+
+-- Create AddressBook table
+CREATE TABLE AddressBooks (
+    AddressBookID INT PRIMARY KEY AUTO_INCREMENT,
+    ContactID INT,
+    TypeID INT,
+    Name VARCHAR(100),
+    FOREIGN KEY (ContactID) REFERENCES Person(ContactID),
+    FOREIGN KEY (TypeID) REFERENCES ContactType(TypeID)
+);
+
+
+INSERT INTO Person (FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email)
+VALUES ('Diana', 'Miller', 'del', 'delhi', 'UP', '2345', '6335839823', 'ria@gmail.com'),
+       ('tanishka', 'jain', 'lko', 'lucknow', 'UP', '12345', '98765432', 'tanishka_jain@email.com');
+INSERT INTO ContactType (TypeName)
+VALUES ('Friends'), ('Family');
+INSERT INTO AddressBooks (ContactID, TypeID, Name)
+VALUES (1, 1, 'Diana Miller'),
+       (2, 1, 'tanishka jain'),
+       (2, 2, 'tanishka jain');
+SELECT * FROM Person;
+SELECT * FROM ContactType;
+SELECT * FROM AddressBooks;
