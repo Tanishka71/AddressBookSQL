@@ -45,3 +45,8 @@ WHERE city="lucknow" OR state="UP";
 SELECT City,State,COUNT(*) AS size
 FROM AddressBook
 GROUP BY city,state;
+
+-- <----------------USE CASE 8------------------->
+SELECT * FROM AddressBook
+WHERE state="UP"
+ORDER BY FirstName;
