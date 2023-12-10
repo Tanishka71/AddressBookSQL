@@ -50,3 +50,14 @@ GROUP BY city,state;
 SELECT * FROM AddressBook
 WHERE state="UP"
 ORDER BY FirstName;
+
+-- <----------------USE CASE 9------------------->
+ALTER TABLE AddressBook
+ADD COLUMN Name VARCHAR(100),
+ADD COLUMN Type VARCHAR(50);
+UPDATE AddressBook
+SET Name = CONCAT(FirstName, ' ', LastName), Type = 'Family'
+WHERE ContactID = 1;
+UPDATE AddressBook
+SET Name = CONCAT(FirstName, ' ', LastName), Type = 'Friends'
+WHERE ContactID = 4;
