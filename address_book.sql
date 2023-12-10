@@ -32,3 +32,7 @@ SET SQL_SAFE_UPDATES = 0;
 UPDATE AddressBook
 SET Address="del" ,City="delhi",State="UP",ZipCode="2345",PhoneNumber="6335839823",Email="ria@gmail.com"
 WHERE FirstName="Diana" AND LastName="Miller"; 
+
+-- <----------------USE CASE 5----------->
+DELETE FROM AddressBook
+WHERE FirstName = 'Charlie' AND LastName = 'Davis';
