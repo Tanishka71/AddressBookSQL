@@ -26,3 +26,9 @@ VALUES
     ('Charlie', 'Davis', '555 Maple St', 'Anywhere', 'FL', '98765', '555-2345', 'charlie.davis@email.com'),
     ('Diana', 'Miller', '876 Oak St', 'Noway', 'WA', '12345', '555-8765', 'diana.miller@email.com');
 SELECT * FROM AddressBook;
+
+-- <----------------USE CASE 4----------->
+SET SQL_SAFE_UPDATES = 0;
+UPDATE AddressBook
+SET Address="del" ,City="delhi",State="UP",ZipCode="2345",PhoneNumber="6335839823",Email="ria@gmail.com"
+WHERE FirstName="Diana" AND LastName="Miller"; 
