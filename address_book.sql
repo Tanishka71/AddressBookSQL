@@ -120,3 +120,24 @@ VALUES (1, 1, 'Diana Miller'),
 SELECT * FROM Person;
 SELECT * FROM ContactType;
 SELECT * FROM AddressBooks;
+
+
+-- <----------------USE CASE 13------------------->
+SELECT *
+FROM Person
+WHERE City = 'lucknow' OR State = 'UP';
+
+SELECT City, State, COUNT(*) AS AddressBookSize
+FROM Person
+GROUP BY City, State
+ORDER BY City, State;
+
+SELECT *
+FROM Person
+WHERE State = 'UP'
+ORDER BY FirstName, LastName;
+
+SELECT AddressBooks.TypeID, ContactType.TypeName, COUNT(*) AS ContactPersonCount
+FROM AddressBooks
+JOIN ContactType ON AddressBooks.TypeID = ContactType.TypeID
+GROUP BY AddressBooks.TypeID, ContactType.TypeName;
