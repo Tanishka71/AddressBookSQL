@@ -36,3 +36,7 @@ WHERE FirstName="Diana" AND LastName="Miller";
 -- <----------------USE CASE 5----------->
 DELETE FROM AddressBook
 WHERE FirstName = 'Charlie' AND LastName = 'Davis';
+
+-- <----------------USE CASE 6----------->
+SELECT * FROM AddressBook
+WHERE city="lucknow" OR state="UP";
