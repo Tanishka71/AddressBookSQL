@@ -66,3 +66,12 @@ WHERE ContactID = 4;
 SELECT type,COUNT(*) 
 FROM AddressBook
 GROUP BY type;
+
+-- <----------------USE CASE 11------------------->
+UPDATE AddressBook
+SET Type = 'Friends'
+WHERE ContactID = 1;
+INSERT INTO AddressBook (FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email, Name, Type)
+SELECT FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email, Name, 'Family'
+FROM AddressBook
+WHERE ContactID = 1;
