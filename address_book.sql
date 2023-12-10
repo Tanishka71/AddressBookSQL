@@ -40,3 +40,8 @@ WHERE FirstName = 'Charlie' AND LastName = 'Davis';
 -- <----------------USE CASE 6----------->
 SELECT * FROM AddressBook
 WHERE city="lucknow" OR state="UP";
+
+-- <----------------USE CASE 7------------------->
+SELECT City,State,COUNT(*) AS size
+FROM AddressBook
+GROUP BY city,state;
